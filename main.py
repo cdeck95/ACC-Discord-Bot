@@ -1,15 +1,16 @@
+import os
 import discord
+from dotenv import load_dotenv
 from discord.ext import commands
 import requests
 
 # Credentials
-TOKEN = 'MTA3ODY3MzAyNTc0Mzk5NDkzMA.Gg08Tc.CF7jyzwZAn7iESE5lbAYQK1sA-vm_-4M_IbaEw'
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 # Create bot
 intents = discord.Intents.all();
 client = commands.Bot(command_prefix='!', intents=intents)
-
-
 
 # Startup Information
 @client.event

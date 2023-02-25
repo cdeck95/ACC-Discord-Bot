@@ -7,8 +7,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/healthz', methods=['GET'])
 def index():
+    print('health page reached')
     return '200 OK'
 
 if __name__ == '__main__':

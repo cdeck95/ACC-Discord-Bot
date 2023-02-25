@@ -3,6 +3,17 @@ import discord
 from dotenv import load_dotenv
 from discord.ext import commands
 import requests
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def index():
+    return '200 OK'
+
+if __name__ == '__main__':
+    print('Starting Flask app...')
+    app.run()
 
 # Credentials
 load_dotenv()

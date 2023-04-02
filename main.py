@@ -42,11 +42,11 @@ async def getimage(ctx, tokenID):
         body = jsonR.json();
         print(body)
         name = body['name']
-        day = body['day']
-        daysLeft = str(15-day)
         if('Tripped' in name):
             #trippy ape
             r = requests.head(path)
+            day = body['day']
+            daysLeft = str(15-day)
             if r.status_code == requests.codes.ok:
                 await ctx.send('Subject #' + tokenID + ' has experienced unfortunate side effects during the trials. These will resolve within ' + daysLeft + ' days.')
                 await ctx.send(path)
